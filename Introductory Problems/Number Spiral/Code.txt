@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()	{
+	
+	int t;
+	cin>>t;
+
+	for(int i=0; i<t; i++)	{
+        long long r,c;
+        cin>>r>>c;
+
+        if(r==c)	{
+            long long i = r;
+            cout<<i*i - (i-1);
+        }
+
+        else if(r<c)	{
+            if(c%2==0)	{
+                long long sv = (c-1)*(c-1);
+                cout<<sv+r;
+            }
+            else {
+                long long sv = c*c;
+                cout<<sv-(r-1);
+            }
+        }
+
+        else 	{
+            if(r%2!=0)	{
+                long long sv = (r-1)*(r-1);
+                cout<<sv+c;
+            }
+            else {
+                long long sv = r*r;
+                cout<<sv-(c-1);
+            }
+        }
+
+        cout<<"\n";
+	}
+
+	return 0;
+}
