@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+
+int main()	{
+	int n;
+	cin>>n;
+    
+    ll mod = pow(10,9) + 7;
+    ll ans = 1;
+
+
+	while(n--) {
+        ll curr = ans*2 ;
+        ll nans = curr % mod;
+        ans = nans;
+    }
+
+    cout<<ans<<"\n";
+
+	return 0;
+}
