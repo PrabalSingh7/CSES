@@ -1,0 +1,43 @@
+#include<bits/stdc++.h>
+using namespace std;
+ 
+typedef long long ll;
+ 
+int main()	{
+ 
+	int n;
+	cin>>n;
+ 
+	if(n==1)
+		cout<<"0 \n1";
+ 
+	vector<vector<int>> prev;
+	vector<int> t1{0};
+	vector<int> t2{1};
+	prev.push_back(t1);
+	prev.push_back(t2);
+ 
+	for(int idx=2; idx<=n; idx++)	{
+		vector<vector<int>> new_curr;
+		for(int i=0; i<pow(2,idx-1); i++)	{
+			vector<int> temp = prev[i];
+			temp.push_back(0);
+			new_curr.push_back(temp);
+		}
+		for(int i=pow(2,idx-1)-1; i>=0; i--)	{
+			vector<int> temp = prev[i];
+			temp.push_back(1);
+			new_curr.push_back(temp);
+		}
+		prev = new_curr;
+ 
+		if(idx==n)	{
+			for(int idx=0; idx<pow(2,n); idx++)	{
+				for(int i=0; i<n; i++)	cout<<new_curr[idx][i];
+				cout<<"\n";
+			}
+		}
+	}	
+ 
+	return 0;
+}
