@@ -34,9 +34,7 @@ typedef pair<int,int> pi;
 //     cout<<rounds;
 //     return 0;
 // }
- 
- 
- 
+  
  
  
 int main()	{
